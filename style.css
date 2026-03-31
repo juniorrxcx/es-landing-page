@@ -1,0 +1,117 @@
+@font-face {
+    font-family: 'FuturaBold';
+    src: url('futura-bold.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'FuturaBold';
+    color: #eee;
+    background-image: url('foto-fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(17, 17, 17, 0.85);
+    transition: background-color 0.8s ease;
+    z-index: -1;
+}
+
+body:has(.verde:hover) .background-overlay { background-color: rgba(35, 110, 68, 0.65); }
+body:has(.laranja:hover) .background-overlay { background-color: rgba(191, 106, 1, 0.666); }
+body:has(.azul:hover) .background-overlay { background-color: rgba(0, 0, 93, 0.65); }
+
+header {
+    text-align: center;
+    padding: 3rem 1rem;
+    font-family: 'FuturaBold';
+    color: rgb(255, 170, 0);
+}
+
+header h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.info-filme {
+    display: flex;
+    gap: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 3rem;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.poster img {
+    max-width: 250px;
+    border-radius: 10px;
+}
+
+.detalhes h2 {
+    font-family: 'FuturaBold';
+    color: rgb(255, 170, 0);
+    margin-top: 0;
+}
+
+.eras h2 {
+    text-align: center;
+    font-family: 'FuturaBold';
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: rgb(255, 170, 0);
+}
+
+.grid-eras {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.era {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.era:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.era h3 {
+    font-family: 'FuturaBold';
+    margin-top: 0;
+}
+
+.era.verde h3 {
+    color: rgb(17, 132, 26);
+}
+
+.era.laranja h3 {
+    color: rgb(143, 95, 12);
+}
+
+.era.azul h3 {
+    color: rgb(18, 71, 141);
+}
